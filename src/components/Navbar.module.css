@@ -1,9 +1,10 @@
 .navbar {
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #8b6f47;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 4px solid #3d2e23;
 }
 
 .container {
@@ -18,13 +19,15 @@
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  color: #f5e6d3;
   text-decoration: none;
   transition: color 0.2s;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
 }
 
 .logo:hover {
-  color: #0070f3;
+  color: #d4a574;
 }
 
 .navLinks {
@@ -34,48 +37,56 @@
 }
 
 .link {
-  color: #555;
+  color: #f5e6d3;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
+  font-family: 'Georgia', serif;
 }
 
 .link:hover {
-  color: #0070f3;
+  color: #d4a574;
 }
 
 .linkButton {
   padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #d4a574;
+  color: #2d1f14;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 0;
+  border: 1px solid #2d1f14;
   font-weight: 600;
-  transition: transform 0.2s;
+  transition: all 0.2s;
+  font-family: 'Georgia', serif;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .linkButton:hover {
-  transform: translateY(-2px);
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
 
 .email {
-  color: #666;
+  color: #f5e6d3;
   font-size: 0.9rem;
+  font-family: 'Georgia', serif;
 }
 
 .signOutButton {
   padding: 0.5rem 1rem;
-  background: #f5f5f5;
-  color: #333;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  background: #d4a574;
+  color: #2d1f14;
+  border: 1px solid #f5e6d3;
+  border-radius: 0;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
+  font-family: 'Georgia', serif;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .signOutButton:hover {
-  background: #e5e5e5;
+  background: #c99563;
 }
 
 @media (max-width: 768px) {

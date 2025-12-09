@@ -4,14 +4,22 @@
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #e8dcc4;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
 }
 
 .formWrapper {
-  background: white;
-  border-radius: 12px;
+  background: #f0e7d8;
+  border-radius: 0;
   padding: 3rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  border: 3px solid #8b6f47;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: 450px;
 }
@@ -21,22 +29,24 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #3d2e23;
+  font-family: 'Georgia', serif;
 }
 
 .subtitle {
   text-align: center;
-  color: #666;
+  color: #5d4e43;
   margin-bottom: 2rem;
+  font-family: 'Georgia', serif;
 }
 
 .error {
-  background-color: #fee;
-  color: #c33;
+  background-color: #d4a5a5;
+  color: #6b3e3e;
   padding: 1rem;
-  border-radius: 4px;
+  border-radius: 0;
   margin-bottom: 1.5rem;
-  border: 1px solid #fcc;
+  border: 2px solid #8b5555;
   text-align: center;
 }
 
@@ -54,39 +64,45 @@
 
 .label {
   font-weight: 600;
-  color: #555;
+  color: #3d2e23;
   font-size: 0.95rem;
+  font-family: 'Georgia', serif;
 }
 
 .input {
   padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  border: 2px solid #8b6f47;
+  border-radius: 0;
   font-size: 1rem;
-  font-family: inherit;
+  font-family: 'Georgia', serif;
   transition: border-color 0.2s;
+  background-color: #faf6f1;
 }
 
 .input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #d4a574;
+  background-color: #f5ede4;
 }
 
 .submitButton {
   padding: 0.875rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  border-radius: 6px;
+  background: #8b6f47;
+  color: #f5e6d3;
+  border: 2px solid #3d2e23;
+  border-radius: 0;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s, opacity 0.2s;
+  transition: all 0.2s;
   margin-top: 0.5rem;
+  font-family: 'Georgia', serif;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .submitButton:hover:not(:disabled) {
-  transform: translateY(-2px);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .submitButton:disabled {
@@ -97,14 +113,16 @@
 .footer {
   text-align: center;
   margin-top: 1.5rem;
-  color: #666;
+  color: #5d4e43;
+  font-family: 'Georgia', serif;
   font-size: 0.95rem;
 }
 
 .link {
-  color: #667eea;
+  color: #8b6f47;
   font-weight: 600;
   text-decoration: none;
+  font-family: 'Georgia', serif;
 }
 
 .link:hover {

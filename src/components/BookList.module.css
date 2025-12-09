@@ -6,11 +6,12 @@
 }
 
 .card {
-  background: white;
-  border-radius: 8px;
+  background: #f0e7d8;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  border: 3px solid #8b6f47;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
   text-decoration: none;
   color: inherit;
   display: flex;
@@ -18,8 +19,9 @@
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+  border-color: #d4a574;
 }
 
 .coverContainer {
@@ -48,19 +50,21 @@
 .title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #333;
+  color: #3d2e23;
   margin-bottom: 0.5rem;
   line-height: 1.4;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-family: 'Georgia', serif;
 }
 
 .author {
-  color: #666;
+  color: #5d4e43;
   font-size: 0.95rem;
   margin-bottom: 1rem;
   font-style: italic;
+  font-family: 'Georgia', serif;
 }
 
 .footer {
@@ -79,9 +83,10 @@
 .emptyState {
   text-align: center;
   padding: 4rem 2rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #f0e7d8;
+  border-radius: 0;
+  border: 3px solid #8b6f47;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 .emptyIcon {
@@ -92,35 +97,41 @@
 .emptyTitle {
   font-size: 1.75rem;
   font-weight: bold;
-  color: #333;
+  color: #3d2e23;
   margin-bottom: 0.75rem;
+  font-family: 'Georgia', serif;
 }
 
 .emptyText {
-  color: #666;
+  color: #5d4e43;
   font-size: 1.1rem;
   margin-bottom: 2rem;
+  font-family: 'Georgia', serif;
 }
 
 .addButton {
   display: inline-block;
   padding: 0.875rem 1.75rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #d4a574;
+  color: #2d1f14;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 0;
+  border: 2px solid #3d2e23;
   font-weight: 600;
-  transition: transform 0.2s;
+  transition: all 0.3s;
+  font-family: 'Georgia', serif;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .addButton:hover {
-  transform: translateY(-2px);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .coverPlaceholder {
   width: 100%;
   height: 300px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #8b6f47 0%, #5d4e43 100%);
   display: flex;
   align-items: center;
   justify-content: center;
