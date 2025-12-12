@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { isValidIsbn, normalizeIsbn } from '@/lib/isbn'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
-import styles from './AddBook.module.css'
+import styles from '@/styles/AddBook.module.css'
 
 export default function AddBookPage() {
   const router = useRouter()
@@ -76,7 +76,6 @@ export default function AddBookPage() {
       return
     }
 
-    // If ISBN present, validate checksum before fetching
     if (isbn) {
       const norm = normalizeIsbn(isbn)
       if (!(isValidIsbn(norm))) {
@@ -114,7 +113,6 @@ export default function AddBookPage() {
   }
 
   useEffect(() => {
-    // Auto-fetch when ISBN looks complete (10 or 13 digits). Debounced to avoid requests while typing.
     const raw = formData.isbn || ''
     const digits = raw.replace(/[^0-9Xx]/g, '')
     if (digits.length === 10 || digits.length === 13) {

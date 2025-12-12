@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -19,14 +16,15 @@ model User {
   updatedAt DateTime @updatedAt
 }
 
+// Book model stores reading list items
 model Book {
   id        Int      @id @default(autoincrement())
   title     String
   author    String
-  status    String   @default("To Read") // Values: "To Read", "Reading", "Finished"
-  cover_url String?  // Optional field for a book cover image URL
-  notes     String?  // Field for personal notes/bio
-  userId    String   // Foreign key to link to the User
+  status    String   @default("To Read") // Reading status: "To Read", "Reading", "Finished"
+  cover_url String?  // Optional book cover image URL
+  notes     String?  // Personal notes about the book
+  userId    String   // Foreign key - links book to specific user for data privacy
   user      User     @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

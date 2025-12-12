@@ -2,7 +2,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/auth'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import styles from './page.module.css'
+import styles from '@/styles/page.module.css'
 
 export default async function Home() {
   const session = await getServerSession(authOptions)

@@ -37,7 +37,6 @@ export async function GET(request, { params }) {
       )
     }
 
-    // Check ownership
     if (book.userId !== session.user.id) {
       return NextResponse.json(
         { error: 'Forbidden' },
@@ -94,7 +93,6 @@ export async function PUT(request, { params }) {
       )
     }
 
-    // Check if book exists and user owns it
     const existingBook = await prisma.book.findUnique({
       where: { id }
     })
@@ -156,7 +154,6 @@ export async function DELETE(request, { params }) {
       )
     }
 
-    // Check if book exists and user owns it
     const existingBook = await prisma.book.findUnique({
       where: { id }
     })

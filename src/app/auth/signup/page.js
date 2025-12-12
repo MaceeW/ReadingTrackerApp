@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { signIn } from 'next-auth/react'
 import Link from 'next/link'
-import styles from '../signin/Auth.module.css'
+import styles from '@/styles/Auth.module.css'
 
 export default function SignUpPage() {
   const router = useRouter()

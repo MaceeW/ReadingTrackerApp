@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
-import styles from './EditBookForm.module.css'
+import styles from '@/styles/EditBookForm.module.css'
 
 export default function EditBookForm({ book }) {
   const router = useRouter()

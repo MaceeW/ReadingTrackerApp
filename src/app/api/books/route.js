@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/auth'
 import { prisma } from '@/lib/prisma'
 
-// GET - Read all books for the authenticated user
+// GET endpoint - fetches all books for the authenticated user
 export async function GET(request) {
   try {
     const session = await getServerSession(authOptions)
@@ -34,6 +34,7 @@ export async function GET(request) {
   }
 }
 
+// POST endpoint - creates a new book
 export async function POST(request) {
   try {
     const session = await getServerSession(authOptions)

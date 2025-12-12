@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Filters from './Filters'
-import styles from './BookList.module.css'
+import styles from '@/styles/BookList.module.css'
 
 export default function BookList({ books: initialBooks }) {
   const [books] = useState(initialBooks)

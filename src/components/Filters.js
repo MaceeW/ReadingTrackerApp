@@ -2,7 +2,7 @@
 
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useState, useEffect, useTransition, useCallback } from 'react'
-import styles from './Filters.module.css'
+import styles from '@/styles/Filters.module.css'
 
 export default function Filters() {
   const router = useRouter()

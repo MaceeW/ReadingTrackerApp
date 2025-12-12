@@ -3,7 +3,7 @@ import { authOptions } from '@/auth'
 import { prisma } from '@/lib/prisma'
 import { redirect } from 'next/navigation'
 import BookList from '@/components/BookList'
-import styles from './dashboard.module.css'
+import styles from '@/styles/dashboard.module.css'
 
 export const dynamic = 'force-dynamic'
 

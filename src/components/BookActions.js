@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import Link from 'next/link'
-import styles from './BookActions.module.css'
+import styles from '@/styles/BookActions.module.css'
 
 export default function BookActions({ bookId }) {
   const router = useRouter()

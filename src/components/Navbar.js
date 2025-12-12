@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useSession, signOut } from 'next-auth/react'
-import styles from './Navbar.module.css'
+import styles from '@/styles/Navbar.module.css'
 
 export default function Navbar() {
   const { data: session, status } = useSession()

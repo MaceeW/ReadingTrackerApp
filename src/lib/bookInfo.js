@@ -1,3 +1,4 @@
+// Fetch book information from Open Library API using ISBN
 async function fetchOpenLibraryByISBN(isbn) {
   try {
     const res = await fetch(
@@ -8,6 +9,7 @@ async function fetchOpenLibraryByISBN(isbn) {
     const key = `ISBN:${isbn}`;
     const book = data[key];
     if (!book) return null;
+    // Extract cover image URL - try to get largest available
     const cover = book.cover?.large || book.cover?.medium || book.cover?.small || null;
     let description = null;
     if (book.excerpts && book.excerpts.length) {
@@ -31,6 +33,7 @@ async function fetchOpenLibraryByISBN(isbn) {
   }
 }
 
+// Search Open Library by title and author when ISBN not available
 async function fetchOpenLibraryBySearch(title, author) {
   try {
     const q = [];
@@ -42,9 +45,9 @@ async function fetchOpenLibraryBySearch(title, author) {
     const data = await res.json();
     const doc = data.docs && data.docs[0];
     if (!doc) return null;
+    // Build cover URL from cover ID
     const coverId = doc.cover_i;
     const coverUrl = coverId ? `https://covers.openlibrary.org/b/id/${coverId}-L.jpg` : null;
-    // try to fetch work to get description
     let description = null;
     if (doc.key) {
       try {
@@ -55,7 +58,6 @@ async function fetchOpenLibraryBySearch(title, author) {
           else if (work.description && work.description.value) description = work.description.value;
         }
       } catch (e) {
-        // ignore
       }
     }
     return {
@@ -96,7 +98,6 @@ async function fetchGoogleBooks(q) {
 }
 
 export async function fetchBookInfo({ isbn, title, author } = {}) {
-  // Prefer ISBN lookups
   if (isbn) {
     const ol = await fetchOpenLibraryByISBN(isbn);
     if (ol) return ol;
@@ -104,11 +105,9 @@ export async function fetchBookInfo({ isbn, title, author } = {}) {
     if (gb) return gb;
   }
 
-  // Try Open Library search by title/author
   if (title || author) {
     const olSearch = await fetchOpenLibraryBySearch(title, author);
     if (olSearch && (olSearch.description || olSearch.coverUrl)) return olSearch;
-    // fallback to Google Books search
     const qParts = [];
     if (title) qParts.push(`intitle:${title}`);
     if (author) qParts.push(`inauthor:${author}`);
